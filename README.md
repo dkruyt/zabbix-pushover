@@ -4,7 +4,8 @@ A Zabbix alertscript for pushover with priority and embedded image graphs
 
 _a Zabbix notification on the Pushover app on a iPhone._
 
-![ios](https://github.com/dkruyt/resources/raw/master/pushover_ios_small.png)
+![ios](https://github.com/dkruyt/resources/raw/master/pushover_ios_small01.png)
+![ios](https://github.com/dkruyt/resources/raw/master/pushover_ios_small02.png)
 
 
 ## cli usage
