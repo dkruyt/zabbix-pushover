@@ -38,7 +38,7 @@ INV=true
 
 ## Configure Actions
 
-Under *configuration -> actions* in Zabbix create or change the notification messages to the folowing. The subject wil be used for the Pushover Priority. These Priority levels can be adjusted if needed in the bash script. Item Graphic will be used to extract a imange from Zabbix en added to the Pushover message.
+Under *configuration -> actions* in Zabbix create or change the notification messages to the folowing. The subject wil be used for the Pushover Priority. These Priority levels can be adjusted if needed in the bash script. Item Graphic will be used to extract a image from Zabbix en added to the Pushover message.
 
 #### Operations
 
