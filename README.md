@@ -89,8 +89,12 @@ Current problem status is {EVENT.STATUS}, acknowledged: {EVENT.ACK.STATUS}.
 
 Under *Administration -> Media* in Zabbix add a new media. Specify the name of the script in script name and check that the parameters are correct.
 
+![mediatype](https://github.com/dkruyt/resources/raw/master/zabbix-mediatype.png)
+
 ## Configure user media
 
 You will need then to add the media to your users. For this just edit an user and add a media selecting the one you just created before. Specify the UserKey and AppToken in the Send to field, separated by a | .
+
+![usermedia](https://github.com/dkruyt/resources/raw/master/zabbix-usermedia.png)
 
 
