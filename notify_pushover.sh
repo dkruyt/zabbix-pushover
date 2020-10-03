@@ -32,10 +32,10 @@ GRAPHID=$(echo $TEXT | grep -o -E "(Item Graphic: \[[0-9]{7}\])|(Item Graphic: \
 GRAPHID=$(echo $GRAPHID | grep -o -E "([0-9]{7})|([0-9]{6})|([0-9]{5})|([0-9]{4})|([0-9]{3})")
 
 # Set cookie
-COOKIE="/tmp/zabbix.cookie"
+COOKIE="/tmp/zabbix.cookie.$RANDOM"
 
 # Set tmp image
-PNG_PATH="/tmp/zabbix-image.png"
+PNG_PATH="/tmp/zabbix-image-$RANDOM.png"
 
 # Get severity and set prio
 SEVERITY=$(echo $SUBJECT | awk -F":" '{print $1;}')
@@ -70,7 +70,7 @@ if [ -z $GRAPHID ]
         # Log in and get Cookie
         ${CURL} -k -s -S --max-time 5 -c ${COOKIE} -b ${COOKIE} -d "name=${USERNAME}&password=${PASSWORD}&autologin=1&enter=Sign%20in" ${ZBX_URL}"/index.php"
         # Get Image and store in tmp
-        ${CURL} -k -s -S --max-time 5 -c ${COOKIE}  -b ${COOKIE} -d "itemids=${GRAPHID}&from=now-${PERIOD}&to=now&width=${WIDTH}&profileIdx=web.graphs.filter" ${ZBX_URL}"/chart.php" -o "${PNG_PATH}";
+        ${CURL} -k -s -S --max-time 5 -c ${COOKIE}  -b ${COOKIE} -d "itemids[]=${GRAPHID}&from=now-${PERIOD}&to=now&width=${WIDTH}&profileIdx=web.graphs.filter" ${ZBX_URL}"/chart.php" -o "${PNG_PATH}";
 
 				if [[ $INV == true ]]
 					then
